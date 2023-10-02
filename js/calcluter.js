@@ -47,7 +47,9 @@ function calculatorEllipseArea(){
       const majorRadius =  getInputValue('ellipse-major-readus');
       const minorRadius = getInputValue('ellipse-mainur-readus');
       const area = 3.14 * majorRadius * minorRadius;
-      setElementText('ellipse-area' , area);
+      const todsemile = area.toFixed(2);
+      
+      setElementText('ellipse-area' , todsemile);
 }
 function getInputValue (filedId){
       const inputFiled = document.getElementById(filedId);
