@@ -10,6 +10,11 @@ function calculatorTriangle(){
       const triangleHeightValue = triangleHeight.value;
       const height = parseFloat(triangleHeightValue);
       triangleHeight.value='';
+      //validation input number 
+      if(isNaN(base) || isNaN(height)){
+            alert('place valid number')
+            return;
+      }
       // triangle area 
       const area = 0.5* base * height;
       console.log(area);
@@ -21,15 +26,23 @@ function calculatorRectangleArea(){
       // rectangle W
       const rectangleW = document.getElementById('rectangle-W');
       const rectangleWValue = rectangleW.value;
-      const wRectangle =parseFloat(rectangleWValue);
+      const width =parseFloat(rectangleWValue);
       rectangleW.value ='';
+
       // rectangle I
       const rectangleI = document.getElementById('rectangle-I');
       const rectangleIValue = rectangleI.value;
-      const iRectangle = parseFloat(rectangleIValue);
+      const length = parseFloat(rectangleIValue);
       rectangleI.value = '';
+      // validation  input  number
+      if(isNaN(width) || isNaN(length)){
+            alert('place number add');
+            return;
+      }
+      //
       // rectangle-area
-      const rectangleArea = wRectangle * iRectangle;
+      const rectangleArea = width * length;
+
       console.log(rectangleArea);
       const areaRectangle = document.getElementById('rectangle-area');
       areaRectangle.innerText =  rectangleArea;
@@ -40,16 +53,26 @@ function calculatorParallelogramArea(){
       console.log(base);
       const height = getInputValue('Parallelogram-height');
       console.log(height);
+      // validation input number 
+      if(isNaN(base) || isNaN(height)){
+            alert('place valid a number');
+            return;
+      }
       const area = base * height;
       setElementText('Parallelogram-area' , area);    
 }
+// Ellipse section 
 function calculatorEllipseArea(){
       const majorRadius =  getInputValue('ellipse-major-readus');
       const minorRadius = getInputValue('ellipse-mainur-readus');
+      // validation input number 
+      if(isNaN(majorRadius) || isNaN(minorRadius)){
+            alert('place valid a number');
+            return;
+      }
       const area = 3.14 * majorRadius * minorRadius;
-      const todsemile = area.toFixed(2);
-      
-      setElementText('ellipse-area' , todsemile);
+      const areaTowDecimal = area.toFixed(2);
+      setElementText('ellipse-area' , areaTowDecimal);
 }
 function getInputValue (filedId){
       const inputFiled = document.getElementById(filedId);
